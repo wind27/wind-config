@@ -50,8 +50,51 @@
 	<build>
 		<defaultGoal>compile</defaultGoal>
 		<directory>${jarTarget}</directory>
+
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>META-INF/*.*</include>
+					<include>logback*.*</include>
+					<include>application.properties</include>
+				</includes>
+			</resource>
+		</resources>
+
 		<plugins>
+			<!--<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>3.0.0</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>com.wind.config.ConfigApplication</mainClass>
+						</manifest>
+						<manifestEntries>
+							<Rose>*</Rose>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>-->
+
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<classpathPrefix>lib/</classpathPrefix>
+							<mainClass>com.wind.config.ConfigApplication</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+
+
+			<!--<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
@@ -64,7 +107,7 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
+			</plugin>-->
 		</plugins>
 	</build>
 </project>

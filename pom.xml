@@ -76,11 +76,11 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
 				<configuration>
-					<excludes>
+					<!--<excludes>
 						<exclude>META-INF/*.*</exclude>
 						<exclude>logback.xml</exclude>
 						<exclude>application.properties</exclude>
-					</excludes>
+					</excludes>-->
 					<archive>
 						<manifest>
 							<addClasspath>true</addClasspath>

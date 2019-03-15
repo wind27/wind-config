@@ -23,10 +23,10 @@
 
     <!-- 按照每天生成日志文件 -->
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>blog.log</file>
+        <file>config.log</file>
         <append>true</append>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${logBase}/blog.log.%d{yyyy-MM-dd}</fileNamePattern>
+            <fileNamePattern>${logBase}/config.log.%d{yyyy-MM-dd}</fileNamePattern>
         </rollingPolicy>
         <encoder>
             <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
@@ -35,7 +35,7 @@
         <!--<MaxHistory>30</MaxHistory>-->
     </appender>
 
-    <!--wind-blog log configure-->
+    <!--wind-config log configure-->
     <logger name="com.wind" additivity="false" level="INFO">
         <appender-ref ref="FILE"/>
     </logger>
